@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/adminpanel',function (){
     return view('admin.home');
 });
+
+Route::get('/adminpanel/categories',[CategoryController::class, 'index']);
+Route::get('/adminpanel/categories/create',[CategoryController::class, 'create']);
