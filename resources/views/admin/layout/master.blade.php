@@ -525,7 +525,6 @@
                     <ul class="treeview-menu">
                         <li><a href="{{route('categories.create')}}"><i class="mdi mdi-toggle-switch-off"></i>ایجاد</a></li>
                         <li><a href="{{route('categories.index')}}"><i class="mdi mdi-toggle-switch-off"></i>لیست</a></li>
-
                     </ul>
                 </li>
 
@@ -536,26 +535,14 @@
                 <li class="treeview">
                     <a href="#">
                         <i class="mdi mdi-widgets"></i>
-                        <span>UI Elements</span>
+                        <span>برند ها</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/pages/ui_badges.html"><i class="mdi mdi-toggle-switch-off"></i>Badges</a></li>
-                        <li><a href="/admin/pages/ui_border_utilities.html"><i class="mdi mdi-toggle-switch-off"></i>Border</a></li>
-                        <li><a href="/admin/pages/ui_buttons.html"><i class="mdi mdi-toggle-switch-off"></i>Buttons</a></li>
-                        <li><a href="/admin/pages/ui_color_utilities.html"><i class="mdi mdi-toggle-switch-off"></i>Color</a></li>
-                        <li><a href="/admin/pages/ui_dropdown.html"><i class="mdi mdi-toggle-switch-off"></i>Dropdown</a></li>
-                        <li><a href="/admin/pages/ui_dropdown_grid.html"><i class="mdi mdi-toggle-switch-off"></i>Dropdown Grid</a></li>
-                        <li><a href="/admin/pages/ui_typography.html"><i class="mdi mdi-toggle-switch-off"></i>Typography</a></li>
-                        <li><a href="/admin/pages/ui_progress_bars.html"><i class="mdi mdi-toggle-switch-off"></i>Progress Bars</a></li>
-                        <li><a href="/admin/pages/ui_grid.html"><i class="mdi mdi-toggle-switch-off"></i>Grid</a></li>
-                        <li><a href="/admin/pages/ui_ribbons.html"><i class="mdi mdi-toggle-switch-off"></i>Ribbons</a></li>
-                        <li><a href="/admin/pages/ui_sliders.html"><i class="mdi mdi-toggle-switch-off"></i>Sliders</a></li>
-                        <li><a href="/admin/pages/ui_tab.html"><i class="mdi mdi-toggle-switch-off"></i>Tabs</a></li>
-                        <li><a href="/admin/pages/ui_timeline.html"><i class="mdi mdi-toggle-switch-off"></i>Timeline</a></li>
-                        <li><a href="/admin/pages/ui_timeline_horizontal.html"><i class="mdi mdi-toggle-switch-off"></i>Horizontal Timeline</a></li>
+                        <li><a href="{{route('brands.create')}}"><i class="mdi mdi-toggle-switch-off"></i>ایجاد</a></li>
+                        <li><a href="{{route('brands.index')}}"><i class="mdi mdi-toggle-switch-off"></i>لیست</a></li>
                     </ul>
                 </li>
 

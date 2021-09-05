@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Client\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,7 @@ Route::prefix('/adminpanel')->group(function () {
 
 
     Route::resource('categories', CategoryController::class);
+    Route::resource('brands',BrandController::class);
 //    Route::get('/categories', [CategoryController::class, 'index'])->name('panel.categories.index');
 //    Route::get('/categories/create', [CategoryController::class, 'create'])->name('panel.categories.create');
 //    Route::post('/categories/store', [CategoryController::class, 'store'])->name('panel.categories.store');
