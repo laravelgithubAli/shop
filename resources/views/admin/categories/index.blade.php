@@ -28,12 +28,16 @@
                                 <tr>
                                     <td>{{$category->id}}</td>
                                     <td>{{$category->title}}</td>
-                                    <td></td>
+                                    <td>{{optional($category->parent)->title}}</td>
                                     <td>
-                                        <a href="/categories/{{$category->id}}" class="btn btn-sm btn-primary" >ویرایش</a>
+                                        <a href="{{route('categories.edit',$category)}}" class="btn btn-sm btn-primary" >ویرایش</a>
                                     </td>
                                     <td>
-                                        <a href="/categories" class="btn btn-sm btn-danger">حذف</a>
+                                        <form action="{{route('categories.destroy',$category)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="submit" class="btn btn-sm btn-danger" value="حذف">
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

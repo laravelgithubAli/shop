@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NewCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -21,7 +22,8 @@ class CategoryController extends Controller
         ]);
     }
 
-    /**
+    /**63+
+     *
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -34,14 +36,16 @@ class CategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @param NewCategoryRequest $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(NewCategoryRequest $request)
     {
-        //
+        Category::query()->create([
+            'title' => $request->get('title'),
+            'category_id' => $request->get('category_id')
+        ]);
+        return redirect(route('categories.index'));
     }
 
     /**
@@ -56,14 +60,15 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return Response
+     * @param Category $category
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit',[
+            'category' => $category,
+            'categories' => Category::all()
+            ]);
     }
 
     /**
@@ -75,7 +80,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->update([
+           'category_id' => $request->get('category_id'),
+           'title' => $request->get('title')
+        ]);
+        return redirect(route('categories.index'));
     }
 
     /**
@@ -86,6 +95,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect(route('categories.index'));
     }
 }
